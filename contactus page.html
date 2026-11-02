@@ -27,9 +27,30 @@
       align-items: center;
     }
     header h1 { font-size: 1.6rem; color: #38bdf8; }
+    header nav { display: flex; align-items: center; }
     nav ul { list-style: none; display: flex; gap: 25px; }
     nav ul li a { color: #fff; font-weight: 500; transition: color 0.3s; }
     nav ul li a:hover { color: #38bdf8; }
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      margin: 5px 0;
+      background: currentColor;
+      border-radius: 999px;
+    }
+    .menu-toggle:focus-visible, nav a:focus-visible {
+      outline: 2px solid #38bdf8;
+      outline-offset: 4px;
+    }
 
     /* ===== Hero ===== */
     .hero {
@@ -107,6 +128,47 @@
       padding: 20px;
       margin-top: 50px;
     }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 15px 20px;
+        flex-direction: row;
+      }
+      .menu-toggle { display: block; }
+      header nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 12px 20px 18px;
+        background: #0f172a;
+        box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+      }
+      header.menu-open nav { display: block; }
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+      .hero {
+        min-height: 40vh;
+        height: auto;
+        padding: 60px 20px;
+      }
+      .hero h2 { font-size: clamp(2rem, 7vw, 2.6rem); }
+      .contact-container { grid-template-columns: 1fr; gap: 20px; }
+      .map iframe { display: block; height: 320px; }
+    }
+
+    @media (max-width: 480px) {
+      header { padding: 14px 16px; }
+      header h1 { font-size: 1.3rem; }
+      section { padding: 45px 16px; }
+      .hero { min-height: 35vh; padding: 50px 16px; }
+      .contact-info, form { padding: 20px; }
+      .map iframe { height: 260px; }
+    }
   </style>
 </head>
 <body>
@@ -114,7 +176,12 @@
   <!-- Header -->
   <header>
     <h1>Nexoza Tech</h1>
-    <nav>
+    <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="main-navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="aboutpage.html">About</a></li>
@@ -165,6 +232,30 @@
   <footer>
     <p>&copy; 2025 Nexoza Tech. All rights reserved.</p>
   </footer>
+
+  <script>
+    const header = document.querySelector('header');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navigationLinks = document.querySelectorAll('#main-navigation a');
+
+    function closeMenu() {
+      header.classList.remove('menu-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Open navigation menu');
+    }
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+      header.classList.toggle('menu-open', !isOpen);
+      menuToggle.setAttribute('aria-expanded', String(!isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Open navigation menu' : 'Close navigation menu');
+    });
+
+    navigationLinks.forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeMenu();
+    });
+  </script>
 
 </body>
 </html>
