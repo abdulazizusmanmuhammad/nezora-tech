@@ -1,327 +1,151 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nexoza Tech - Professional Services</title>
-  <link rel="icon" type="/my com.ico" href="favicon.png">
-  <link rel="icon" type="image/x-icon" href="com.ico">
-
-
-  <style>
-    /* ===== Global Styles ===== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; line-height: 1.6; background: #fdfdfd; }
-    h1, h2, h3 { font-weight: 700; color: #111; }
-    a { text-decoration: none; color: inherit; }
-    section { padding: 70px 20px; max-width: 1200px; margin: auto; }
-
-    /* ===== Header ===== */
-    header {
-      background: #0f172a;
-      color: #fff;
-      padding: 15px 40px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .brand-logo {
-      width: 42px;
-      height: 42px;
-      object-fit: contain;
-      border-radius: 10px;
-      background: rgba(255,255,255,0.08);
-      padding: 6px;
-    }
-    header h1 { font-size: 1.6rem; color: #38bdf8; }
-    header nav {
-      display: flex;
-      align-items: center;
-    }
-    nav ul { list-style: none; display: flex; gap: 25px; }
-    nav ul li a { color: #fff; font-weight: 500; transition: color 0.3s; }
-    nav ul li a:hover { color: #38bdf8; }
-    .menu-toggle {
-      display: none;
-      border: 0;
-      background: transparent;
-      color: #fff;
-      cursor: pointer;
-      padding: 8px;
-    }
-    .menu-toggle span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      margin: 5px 0;
-      background: currentColor;
-    }
-    .menu-toggle:focus-visible, nav a:focus-visible {
-      outline: 2px solid #38bdf8;
-      outline-offset: 4px;
-    }
-
-    /* ===== Hero ===== */
-    .hero {
-      background: linear-gradient(rgba(15,23,42,0.7), rgba(15,23,42,0.7)), url('https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop') no-repeat center/cover;
-      color: #fff;
-      height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      flex-direction: column;
-      padding: 0 20px;
-    }
-    .hero h2 { font-size: 3rem; margin-bottom: 20px; }
-    .hero p { max-width: 700px; margin-bottom: 30px; }
-    .btn {
-      display: inline-block;
-      padding: 12px 25px;
-      background: #38bdf8;
-      color: #fff;
-      border-radius: 6px;
-      font-weight: 600;
-      transition: background 0.3s;
-    }
-    .btn:hover { background: #0284c7; }
-
-    /* ===== About ===== */
-    .about { text-align: center; }
-    .about p { max-width: 800px; margin: 20px auto; color: #555; }
-
-    /* ===== Services ===== */
-    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 40px; }
-    .service {
-      background: #fff;
-      padding: 25px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      transition: transform 0.3s;
-    }
-    .service:hover { transform: translateY(-8px); }
-    .service h3 { margin-bottom: 10px; color: #0f172a; }
-    .service p { color: #666; }
-
-    /* ===== Pricing ===== */
-    .pricing { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; margin-top: 40px; }
-    .plan {
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      text-align: center;
-      width: 300px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-      transition: transform 0.3s, border 0.3s;
-      border: 2px solid transparent;
-    }
-    .plan:hover { transform: translateY(-8px); border: 2px solid #38bdf8; }
-    .plan h3 { margin-bottom: 10px; }
-    .plan .price { font-size: 1.8rem; margin: 15px 0; color: #0f172a; font-weight: bold; }
-    .plan p { color: #555; margin-bottom: 20px; }
-    .plan .btn { width: 100%; }
-
-    /* ===== Contact ===== */
-    .contact form { display: grid; gap: 15px; max-width: 600px; margin: auto; }
-    .contact input, .contact textarea {
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1rem;
-    }
-    .contact textarea { resize: vertical; }
-    .contact button { border: none; }
-
-    /* ===== Footer ===== */
-    footer {
-      background: #0f172a;
-      color: #aaa;
-      text-align: center;
-      padding: 20px;
-      margin-top: 50px;
-    }
-    footer p { color: #aaa; }
-
-    /* ===== Responsive Layout ===== */
-    @media (max-width: 768px) {
-      header {
-        padding: 15px 20px;
-        position: sticky;
-        flex-direction: row;
-        gap: 0;
-      }
-      .menu-toggle { display: block; }
-      header nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        padding: 12px 20px 18px;
-        background: #0f172a;
-        box-shadow: 0 8px 12px rgba(0,0,0,0.15);
-      }
-      header.menu-open nav { display: block; }
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-      }
-      section { padding: 55px 20px; }
-      .hero {
-        min-height: 65vh;
-        height: auto;
-        padding: 70px 20px;
-      }
-      .hero h2 { font-size: clamp(2rem, 7vw, 2.6rem); }
-      .services { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-      .plan { width: min(100%, 400px); }
-    }
-
-    @media (max-width: 480px) {
-      header { padding: 14px 16px; }
-      header h1 { font-size: 1.4rem; }
-      nav ul { gap: 12px; }
-      nav ul li a { font-size: 0.9rem; }
-      section { padding: 45px 16px; }
-      .hero { min-height: 60vh; padding: 60px 16px; }
-      .hero h2 { font-size: 2rem; }
-      .hero p { margin-bottom: 24px; }
-      .services { grid-template-columns: 1fr; gap: 16px; }
-      .service, .plan { padding: 22px 18px; }
-      .pricing { gap: 16px; }
-      .contact input, .contact textarea { font-size: 16px; }
-    }
-  </style>
+  <meta name="description" content="Nexora Tech helps small businesses grow with professional web development, graphic design, and content services.">
+  <title>Nexora Tech | Digital Services for Small Businesses</title>
+  <link rel="icon" href="com.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Header -->
-  <header>
-    <div class="brand" aria-label="Nexora Tech brand logo and name">
-      <img class="brand-logo" src="com.ico" alt="Nexora Tech logo">
-      <h1>Nexora Tech</h1>
-    </div>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Nexora Tech home">
+      <img class="brand-logo" src="com.ico" alt="">
+      <span class="brand-name">Nexora Tech</span>
+    </a>
     <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-navigation">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
-    <nav id="main-navigation">
+    <nav id="main-navigation" aria-label="Main navigation">
       <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="aboutpage.html">About</a></li>
         <li><a href="servicespage.html">Services</a></li>
         <li><a href="pricingpage.html">Pricing</a></li>
         <li><a href="blogpage.html">Blog</a></li>
-        <li><a href="contactus page.html">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h2>Innovative Solutions for Your Business</h2>
-    <p>Nexora Tech provides cutting-edge web development, graphic design, and content solutions to help businesses grow in the digital era.</p>
-    <a href="#contact" class="btn">Get Started</a>
-  </section>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Digital services for growing businesses</p>
+        <h1 id="hero-title">Innovative Solutions for Your Business</h1>
+        <p>Nexora Tech provides web development, graphic design, and content solutions to help businesses grow in the digital era.</p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn">Get Started</a>
+          <a href="servicespage.html" class="btn btn-secondary">View Services</a>
+        </div>
+      </div>
+    </section>
 
-  <!-- About -->
-  <section id="about" class="about">
-    <h2>About Us</h2>
-    <p>At Nexora Tech, we combine creativity, technology, and strategy to deliver outstanding results. Our mission is to empower businesses with professional websites, engaging designs, and impactful content that truly connect with audiences.</p>
-  </section>
+    <section id="about" aria-labelledby="about-title">
+      <p class="eyebrow">About Nexora Tech</p>
+      <h2 class="section-title" id="about-title">Creative, thoughtful, and built around your goals</h2>
+      <p class="section-lead">At Nexora Tech, we combine creativity, technology, and strategy to deliver outstanding results. Our mission is to empower businesses with professional websites, engaging designs, and impactful content that truly connect with audiences.</p>
+      <div class="stats-grid">
+        <div class="stat-card reveal"><strong>3</strong><span>Core digital services</span></div>
+        <div class="stat-card reveal"><strong>3</strong><span>Clear pricing plans</span></div>
+        <div class="stat-card reveal"><strong>4</strong><span>Specialist team roles</span></div>
+        <div class="stat-card reveal"><strong>$19</strong><span>Starting plan price</span></div>
+      </div>
+    </section>
 
-  <!-- Services -->
-  <section id="services">
-    <h2 style="text-align:center;">Our Services</h2>
-    <div class="services">
-      <div class="service">
-        <h3>Web Development</h3>
-        <p>Responsive, fast, and SEO-friendly websites tailored to your brand and business goals.</p>
+    <section class="section-soft" id="services" aria-labelledby="services-title">
+      <p class="eyebrow">What we can help with</p>
+      <h2 class="section-title" id="services-title">Our Services</h2>
+      <p class="section-lead">Professional digital essentials to help your business make a strong first impression and keep growing.</p>
+      <div class="service-grid">
+        <article class="service-card reveal">
+          <span class="service-icon" aria-hidden="true">⌘</span>
+          <h3>Web Development</h3>
+          <p>Responsive, fast, and SEO-friendly websites tailored to your brand and business goals.</p>
+        </article>
+        <article class="service-card reveal">
+          <span class="service-icon" aria-hidden="true">✦</span>
+          <h3>Graphic Design</h3>
+          <p>Logos, branding, and marketing visuals that make your business stand out in a crowded market.</p>
+        </article>
+        <article class="service-card reveal">
+          <span class="service-icon" aria-hidden="true">✎</span>
+          <h3>Content &amp; Blogs</h3>
+          <p>Engaging content strategies and blogs that boost your online presence and attract customers.</p>
+        </article>
       </div>
-      <div class="service">
-        <h3>Graphic Design</h3>
-        <p>Logos, branding, and marketing visuals that make your business stand out in a crowded market.</p>
+      <div class="hero-actions"><a class="btn" href="servicespage.html">Explore all services</a></div>
+    </section>
+
+    <section id="pricing" aria-labelledby="pricing-title">
+      <p class="eyebrow">Simple starting points</p>
+      <h2 class="section-title" id="pricing-title">Pricing Plans</h2>
+      <p class="section-lead">Choose a starting point for your project. We’ll confirm the scope with you before work begins.</p>
+      <div class="price-grid">
+        <article class="price-card reveal">
+          <h3>Basic</h3>
+          <p class="price">$19 <small>starting price</small></p>
+          <p>Starter website or simple design project.</p>
+          <ul class="feature-list"><li>One-page website or focused design task</li><li>Responsive, clean presentation</li><li>Basic design revisions</li></ul>
+          <a href="contact.html" class="btn btn-secondary">Choose Plan</a>
+        </article>
+        <article class="price-card popular reveal">
+          <span class="popular-label">Most Popular</span>
+          <h3>Standard</h3>
+          <p class="price">$49 <small>starting price</small></p>
+          <p>Multi-page site, branding, and SEO setup.</p>
+          <ul class="feature-list"><li>Multi-page website or extended design scope</li><li>Custom brand styling</li><li>SEO setup for key pages</li></ul>
+          <a href="contact.html" class="btn">Choose Plan</a>
+        </article>
+        <article class="price-card reveal">
+          <h3>Premium</h3>
+          <p class="price">$99 <small>starting price</small></p>
+          <p>Full website, custom graphics, and blog content.</p>
+          <ul class="feature-list"><li>Complete website and custom graphics</li><li>Blog and content support</li><li>Expanded refinement and revisions</li></ul>
+          <a href="contact.html" class="btn btn-secondary">Choose Plan</a>
+        </article>
       </div>
-      <div class="service">
-        <h3>Content & Blogs</h3>
-        <p>Engaging content strategies and blogs that boost your online presence and attract customers.</p>
+      <p class="testimonial-note">Final project pricing depends on scope. We’ll agree on the deliverables and cost before starting.</p>
+    </section>
+
+    <section class="section-soft" aria-labelledby="testimonials-title">
+      <p class="eyebrow">Client stories</p>
+      <h2 class="section-title" id="testimonials-title">What clients say about working with us</h2>
+      <div class="testimonial-grid">
+        <figure class="testimonial-card reveal">
+          <blockquote>“[Add an approved client testimonial about web development here.]”</blockquote>
+          <figcaption><cite>[Client name and role]</cite></figcaption>
+        </figure>
+        <figure class="testimonial-card reveal">
+          <blockquote>“[Add an approved client testimonial about design here.]”</blockquote>
+          <figcaption><cite>[Client name and role]</cite></figcaption>
+        </figure>
+        <figure class="testimonial-card reveal">
+          <blockquote>“[Add an approved client testimonial about content here.]”</blockquote>
+          <figcaption><cite>[Client name and role]</cite></figcaption>
+        </figure>
       </div>
+      <p class="testimonial-note">These are placeholders, not customer reviews. Replace them with genuine, permission-approved testimonials before publishing.</p>
+    </section>
+
+    <section class="cta-banner" aria-labelledby="cta-title">
+      <div><h2 id="cta-title">Ready to grow your online presence?</h2><p>Tell us what you’re working on and we’ll help you choose the right next step.</p></div>
+      <a class="btn" href="contact.html">Let’s get started</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div><a class="footer-brand" href="index.html"><img class="brand-logo" src="com.ico" alt="">Nexora Tech</a><p>Friendly digital services for small businesses ready to grow online.</p></div>
+      <div><h2>Quick links</h2><ul class="footer-links"><li><a href="aboutpage.html">About</a></li><li><a href="servicespage.html">Services</a></li><li><a href="pricingpage.html">Pricing</a></li><li><a href="blogpage.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h2>Contact</h2><ul class="footer-links"><li><a href="mailto:support@nexoratech.com">support@nexoratech.com</a></li><li><a href="tel:+2348001234567">+234 800 123 4567</a></li><li>Abuja, Nigeria</li></ul></div>
     </div>
-  </section>
-
-  <!-- Pricing -->
-  <section id="pricing">
-    <h2 style="text-align:center;">Pricing Plans</h2>
-    <div class="pricing">
-      <div class="plan">
-        <h3>Basic</h3>
-        <p class="price">$19</p>
-        <p>Starter website or simple design project.</p>
-        <a href="#contact" class="btn">Choose Plan</a>
-      </div>
-      <div class="plan">
-        <h3>Standard</h3>
-        <p class="price">$49</p>
-        <p>Multi-page site, branding, and SEO setup.</p>
-        <a href="#contact" class="btn">Choose Plan</a>
-      </div>
-      <div class="plan">
-        <h3>Premium</h3>
-        <p class="price">$99</p>
-        <p>Full website, custom graphics, and blog content.</p>
-        <a href="#contact" class="btn">Choose Plan</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <h2 style="text-align:center;">Contact Us</h2>
-    <form onsubmit="event.preventDefault(); alert('Thank you for contacting Nexoza Tech!')">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Nexora Tech. All rights reserved.</p>
+    <p class="copyright">&copy; <span data-current-year>2026</span> Nexora Tech. All rights reserved.</p>
   </footer>
-
-  <script>
-    const header = document.querySelector('header');
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navigationLinks = document.querySelectorAll('#main-navigation a');
-
-    function closeMenu() {
-      header.classList.remove('menu-open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.setAttribute('aria-label', 'Open navigation menu');
-    }
-
-    menuToggle.addEventListener('click', () => {
-      const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
-      header.classList.toggle('menu-open', !isOpen);
-      menuToggle.setAttribute('aria-expanded', String(!isOpen));
-      menuToggle.setAttribute('aria-label', isOpen ? 'Open navigation menu' : 'Close navigation menu');
-    });
-
-    navigationLinks.forEach(link => link.addEventListener('click', closeMenu));
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape') closeMenu();
-    });
-  </script>
+  <script src="script.js" defer></script>
 </body>
 </html>

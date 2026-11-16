@@ -3,276 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog - Nexoza Tech</title>
-  <link rel="icon" type="/my com.ico" href="favicon.png">
-  <link rel="icon" type="image/x-icon" href="com.ico">
-  <style>
-    /* ===== Global Styles ===== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; background: #fafafa; line-height: 1.6; }
-    h1, h2, h3 { font-weight: 700; color: #111; }
-    a { text-decoration: none; color: inherit; }
-    section { padding: 70px 20px; max-width: 1200px; margin: auto; }
-
-    /* ===== Header ===== */
-    header {
-      background: #0f172a;
-      color: #fff;
-      padding: 15px 40px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .brand-logo {
-      display: block;
-      width: 42px;
-      height: 42px;
-      object-fit: contain;
-      border-radius: 12px;
-      background: rgba(255,255,255,0.08);
-      padding: 6px;
-    }
-    header h1 { font-size: 1.6rem; color: #38bdf8; }
-    header nav { display: flex; align-items: center; }
-    nav ul { list-style: none; display: flex; gap: 25px; }
-    nav ul li a { color: #fff; font-weight: 500; transition: color 0.3s; }
-    nav ul li a:hover { color: #38bdf8; }
-    .menu-toggle {
-      display: none;
-      border: 0;
-      background: transparent;
-      color: #fff;
-      cursor: pointer;
-      padding: 8px;
-    }
-    .menu-toggle span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      margin: 5px 0;
-      background: currentColor;
-      border-radius: 999px;
-    }
-    .menu-toggle:focus-visible, nav a:focus-visible {
-      outline: 2px solid #38bdf8;
-      outline-offset: 4px;
-    }
-
-    /* ===== Hero ===== */
-    .hero {
-      background: linear-gradient(rgba(15,23,42,0.75), rgba(15,23,42,0.75)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop') no-repeat center/cover;
-      color: #fff;
-      height: 45vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 20px;
-    }
-    .hero h2 { font-size: 2.8rem; }
-
-    /* ===== Blog Section ===== */
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-    .blog-card {
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-      transition: transform 0.3s;
-    }
-    .blog-card:hover { transform: translateY(-6px); }
-    .blog-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-    .blog-content {
-      padding: 20px;
-    }
-    .blog-content h3 {
-      margin-bottom: 12px;
-      font-size: 1.2rem;
-      color: #0f172a;
-    }
-    .blog-content p {
-      margin-bottom: 15px;
-      color: #555;
-    }
-    .read-more {
-      color: #38bdf8;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-    .read-more:hover { color: #0ea5e9; }
-
-    /* ===== Footer ===== */
-    footer {
-      background: #0f172a;
-      color: #aaa;
-      text-align: center;
-      padding: 20px;
-      margin-top: 50px;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        padding: 15px 20px;
-        flex-direction: row;
-      }
-      .menu-toggle { display: block; }
-      header nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        padding: 12px 20px 18px;
-        background: #0f172a;
-        box-shadow: 0 8px 12px rgba(0,0,0,0.15);
-      }
-      header.menu-open nav { display: block; }
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-      }
-      .hero {
-        min-height: 40vh;
-        height: auto;
-        padding: 60px 20px;
-      }
-      .hero h2 { font-size: clamp(2rem, 7vw, 2.6rem); }
-    }
-
-    @media (max-width: 480px) {
-      header { padding: 14px 16px; }
-      header h1 { font-size: 1.3rem; }
-      section { padding: 45px 16px; }
-      .hero { min-height: 35vh; padding: 50px 16px; }
-      .blog-grid { grid-template-columns: 1fr; gap: 18px; }
-    }
-  </style>
+  <meta name="description" content="Read Nexora Tech articles on web development, graphic design, content strategy, and growing a digital business.">
+  <title>Blog | Nexora Tech</title>
+  <link rel="icon" href="com.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Header -->
-  <header>
-    <div class="brand">
-      <a href="index.html" aria-label="Go to home page">
-        <img class="brand-logo" src="com.ico" alt="Nexoza Tech logo">
-      </a>
-      <a href="index.html"><h1>Nexoza Tech</h1></a>
-    </div>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Nexora Tech home">
+      <img class="brand-logo" src="com.ico" alt="">
+      <span class="brand-name">Nexora Tech</span>
+    </a>
     <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-navigation">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
-    <nav id="main-navigation">
+    <nav id="main-navigation" aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="aboutpage.html">About</a></li>
         <li><a href="servicespage.html">Services</a></li>
-        <li><a href="blogpage.html" style="color:#38bdf8;">Blog</a></li>
-        <li><a href="contactus page.html">Contact</a></li>
+        <li><a href="pricingpage.html">Pricing</a></li>
+        <li><a href="blogpage.html" aria-current="page">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h2>Our Blog</h2>
-  </section>
-
-  <!-- Blog Posts -->
-  <section>
-    <h2 style="text-align:center;">Latest Articles</h2>
-    <div class="blog-grid">
-      
-      <!-- Blog Card 1 -->
-      <div class="blog-card">
-        <img src="https://images.unsplash.com/photo-1521790361543-f645cf042ec4?q=80&w=1200&auto=format&fit=crop" alt="Web development trends">
-        <div class="blog-content">
-          <h3>Top Web Development Trends in 2025</h3>
-          <p>Discover the latest frameworks, tools, and technologies shaping the future of web development.</p>
-          <a href="#" class="read-more">Read More →</a>
-        </div>
+  <main>
+    <section class="hero page-hero" aria-labelledby="page-title">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Ideas for a stronger online presence</p>
+        <h1 id="page-title">Helpful thinking for growing businesses</h1>
+        <p>Explore practical notes on websites, design, content, and building a thoughtful digital presence.</p>
       </div>
+    </section>
 
-      <!-- Blog Card 2 -->
-      <div class="blog-card">
-        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1200&auto=format&fit=crop" alt="Graphic design tips">
-        <div class="blog-content">
-          <h3>5 Graphic Design Tips for Stunning Branding</h3>
-          <p>Learn how to create visually impactful designs that connect with your audience and boost your brand identity.</p>
-          <a href="#" class="read-more">Read More →</a>
-        </div>
+    <section aria-labelledby="articles-title">
+      <p class="eyebrow">From the Nexora Tech team</p>
+      <h2 class="section-title" id="articles-title">Latest Articles</h2>
+      <div class="blog-grid">
+        <article class="blog-card reveal">
+          <img src="https://images.unsplash.com/photo-1521790361543-f645cf042ec4?q=80&w=1200&auto=format&fit=crop" alt="Colleagues discussing a web project">
+          <div class="card-body">
+            <p class="eyebrow">Web development</p>
+            <h3>Web Development Trends to Watch in 2026</h3>
+            <p>Explore practical tools and ideas shaping modern websites, from performance to accessible experiences.</p>
+            <a href="servicespage.html" class="read-more">Explore web services</a>
+          </div>
+        </article>
+        <article class="blog-card reveal">
+          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1200&auto=format&fit=crop" alt="Designer working on a visual identity">
+          <div class="card-body">
+            <p class="eyebrow">Graphic design</p>
+            <h3>5 Graphic Design Tips for a Clearer Brand</h3>
+            <p>Learn how to build a consistent visual identity that connects with your audience and supports your brand.</p>
+            <a href="servicespage.html" class="read-more">Explore design services</a>
+          </div>
+        </article>
+        <article class="blog-card reveal">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop" alt="Team planning a content strategy">
+          <div class="card-body">
+            <p class="eyebrow">Content strategy</p>
+            <h3>How a Blog Can Support Your Business</h3>
+            <p>Find out how useful, consistent articles can improve discoverability, engagement, and customer confidence.</p>
+            <a href="servicespage.html" class="read-more">Explore content services</a>
+          </div>
+        </article>
+        <article class="blog-card reveal">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Small team collaborating around a laptop">
+          <div class="card-body">
+            <p class="eyebrow">Small business</p>
+            <h3>Building a Digital Presence: Start with the Basics</h3>
+            <p>A considered website, clear branding, and useful content can make a strong foundation for a growing business.</p>
+            <a href="contact.html" class="read-more">Talk through your next step</a>
+          </div>
+        </article>
       </div>
+    </section>
 
-      <!-- Blog Card 3 -->
-      <div class="blog-card">
-        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop" alt="Content strategy">
-        <div class="blog-content">
-          <h3>How Blogs Can Boost Your Business in 2025</h3>
-          <p>Content is still king. Find out why maintaining a blog is key for SEO, engagement, and lead generation.</p>
-          <a href="#" class="read-more">Read More →</a>
-        </div>
-      </div>
+    <section class="cta-banner" aria-labelledby="cta-title">
+      <div><h2 id="cta-title">Have a topic you’d like us to cover?</h2><p>Tell us what you’re working on or ask how we can help your business online.</p></div>
+      <a class="btn" href="contact.html">Get in touch</a>
+    </section>
+  </main>
 
-      <!-- Blog Card 4 -->
-      <div class="blog-card">
-        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Tech startup">
-        <div class="blog-content">
-          <h3>Building a Tech Startup: Lessons Learned</h3>
-          <p>We share insights from our journey in launching digital solutions and growing Nexoza Tech.</p>
-          <a href="#" class="read-more">Read More →</a>
-        </div>
-      </div>
-
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div><a class="footer-brand" href="index.html"><img class="brand-logo" src="com.ico" alt="">Nexora Tech</a><p>Friendly digital services for small businesses ready to grow online.</p></div>
+      <div><h2>Quick links</h2><ul class="footer-links"><li><a href="aboutpage.html">About</a></li><li><a href="servicespage.html">Services</a></li><li><a href="pricingpage.html">Pricing</a></li><li><a href="blogpage.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h2>Contact</h2><ul class="footer-links"><li><a href="mailto:support@nexoratech.com">support@nexoratech.com</a></li><li><a href="tel:+2348001234567">+234 800 123 4567</a></li><li>Abuja, Nigeria</li></ul></div>
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Nexoza Tech. All rights reserved.</p>
+    <p class="copyright">&copy; <span data-current-year>2026</span> Nexora Tech. All rights reserved.</p>
   </footer>
-
-  <script>
-    const header = document.querySelector('header');
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navigationLinks = document.querySelectorAll('#main-navigation a');
-
-    function closeMenu() {
-      header.classList.remove('menu-open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.setAttribute('aria-label', 'Open navigation menu');
-    }
-
-    menuToggle.addEventListener('click', () => {
-      const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
-      header.classList.toggle('menu-open', !isOpen);
-      menuToggle.setAttribute('aria-expanded', String(!isOpen));
-      menuToggle.setAttribute('aria-label', isOpen ? 'Open navigation menu' : 'Close navigation menu');
-    });
-
-    navigationLinks.forEach(link => link.addEventListener('click', closeMenu));
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape') closeMenu();
-    });
-  </script>
-
+  <script src="script.js" defer></script>
 </body>
 </html>

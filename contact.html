@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Nexora Tech to discuss web development, graphic design, or content support for your small business.">
+  <title>Contact | Nexora Tech</title>
+  <link rel="icon" href="com.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Nexora Tech home">
+      <img class="brand-logo" src="com.ico" alt="">
+      <span class="brand-name">Nexora Tech</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="main-navigation" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutpage.html">About</a></li>
+        <li><a href="servicespage.html">Services</a></li>
+        <li><a href="pricingpage.html">Pricing</a></li>
+        <li><a href="blogpage.html">Blog</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero page-hero" aria-labelledby="page-title">
+      <div class="hero-content">
+        <p class="hero-eyebrow">We’d love to hear what you’re building</p>
+        <h1 id="page-title">Let’s talk about your next digital step</h1>
+        <p>Share a little about your business and what you need. We’ll get back to you to discuss the right way forward.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="contact-title">
+      <p class="eyebrow">Get in touch</p>
+      <h2 class="section-title" id="contact-title">How can we help?</h2>
+      <div class="contact-grid">
+        <aside class="contact-card">
+          <h3>Contact Information</h3>
+          <p>We’re here to answer your questions and help bring your ideas to life.</p>
+          <ul class="feature-list">
+            <li><strong>Email:</strong> <a href="mailto:support@nexoratech.com">support@nexoratech.com</a></li>
+            <li><strong>Phone:</strong> <a href="tel:+2348001234567">+234 800 123 4567</a></li>
+            <li><strong>Address:</strong> Abuja, Nigeria</li>
+          </ul>
+        </aside>
+
+        <div class="contact-card">
+          <h3>Send us a message</h3>
+          <form action="mailto:support@nexoratech.com" method="post" enctype="text/plain">
+            <div class="form-field">
+              <label for="contact-name">Your name</label>
+              <input id="contact-name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="100">
+            </div>
+            <div class="form-field">
+              <label for="contact-email">Email address</label>
+              <input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="254">
+            </div>
+            <div class="form-field">
+              <label for="contact-message">How can we help?</label>
+              <textarea id="contact-message" name="message" required minlength="10" maxlength="5000"></textarea>
+            </div>
+            <button class="btn" type="submit">Send message</button>
+            <p class="form-note">Your email app will open with your message ready to send. Required fields and email format are checked before it opens.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="location-title">
+      <p class="eyebrow">Where we’re based</p>
+      <h2 class="section-title" id="location-title">Abuja, Nigeria</h2>
+      <iframe class="map-frame" title="Map showing Abuja, Nigeria" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.619265299098!2d7.49508!3d9.072264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0a3f9f6e7cfd%3A0x92b9b9d0e1b054c4!2sAbuja%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1678743214567!5m2!1sen!2sng" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </section>
+
+    <section class="cta-banner" aria-labelledby="cta-title">
+      <div><h2 id="cta-title">Prefer a quick conversation?</h2><p>Call us at +234 800 123 4567 to talk through your project.</p></div>
+      <a class="btn" href="tel:+2348001234567">Call Nexora Tech</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div><a class="footer-brand" href="index.html"><img class="brand-logo" src="com.ico" alt="">Nexora Tech</a><p>Friendly digital services for small businesses ready to grow online.</p></div>
+      <div><h2>Quick links</h2><ul class="footer-links"><li><a href="aboutpage.html">About</a></li><li><a href="servicespage.html">Services</a></li><li><a href="pricingpage.html">Pricing</a></li><li><a href="blogpage.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h2>Contact</h2><ul class="footer-links"><li><a href="mailto:support@nexoratech.com">support@nexoratech.com</a></li><li><a href="tel:+2348001234567">+234 800 123 4567</a></li><li>Abuja, Nigeria</li></ul></div>
+    </div>
+    <p class="copyright">&copy; <span data-current-year>2026</span> Nexora Tech. All rights reserved.</p>
+  </footer>
+  <script src="script.js" defer></script>
+</body>
+</html>

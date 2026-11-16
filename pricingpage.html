@@ -3,191 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pricing - Nexoza Tech</title>
-  <link rel="icon" type="/my com.ico" href="favicon.png">
-  <link rel="icon" type="image/x-icon" href="com.ico">
-  <style>
-    /* ===== Global Styles ===== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #fafafa; color: #333; line-height: 1.6; }
-    h1, h2, h3 { font-weight: 700; }
-    a { text-decoration: none; color: inherit; }
-    section { padding: 70px 20px; max-width: 1200px; margin: auto; }
-
-    /* ===== Header ===== */
-    header {
-      background: #0f172a;
-      color: #fff;
-      padding: 15px 40px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header h1 { font-size: 1.6rem; color: #38bdf8; }
-    nav ul { list-style: none; display: flex; gap: 25px; }
-    nav ul li a { color: #fff; font-weight: 500; transition: color 0.3s; }
-    nav ul li a:hover { color: #38bdf8; }
-
-    /* ===== Hero ===== */
-    .hero {
-      background: linear-gradient(rgba(15,23,42,0.75), rgba(15,23,42,0.75)), url('https://images.unsplash.com/photo-1556741533-f6acd647d2fb?q=80&w=1600&auto=format&fit=crop') no-repeat center/cover;
-      color: #fff;
-      height: 40vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 20px;
-    }
-    .hero h2 { font-size: 2.8rem; }
-
-    /* ===== Pricing Section ===== */
-    .pricing-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-    .pricing-card {
-      background: #fff;
-      padding: 30px 20px;
-      border-radius: 12px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
-      text-align: center;
-      transition: transform 0.3s;
-    }
-    .pricing-card:hover { transform: translateY(-6px); }
-    .pricing-card.popular {
-      border: 2px solid #38bdf8;
-      box-shadow: 0 8px 20px rgba(56,189,248,0.25);
-      transform: scale(1.05);
-    }
-    .pricing-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      color: #0f172a;
-    }
-    .pricing-card p.price {
-      font-size: 2rem;
-      margin: 20px 0;
-      font-weight: bold;
-      color: #38bdf8;
-    }
-    .features {
-      list-style: none;
-      padding: 0;
-      margin: 20px 0;
-      color: #555;
-    }
-    .features li {
-      margin: 10px 0;
-      font-size: 0.95rem;
-    }
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    .btn-primary {
-      background: #38bdf8;
-      color: #fff;
-    }
-    .btn-primary:hover { background: #0ea5e9; }
-    .btn-outline {
-      border: 2px solid #38bdf8;
-      color: #38bdf8;
-      background: #fff;
-    }
-    .btn-outline:hover { background: #38bdf8; color: #fff; }
-
-    /* ===== Footer ===== */
-    footer {
-      background: #0f172a;
-      color: #aaa;
-      text-align: center;
-      padding: 20px;
-      margin-top: 50px;
-    }
-  </style>
+  <meta name="description" content="Compare Nexora Tech's Basic, Standard, and Premium digital service plans, starting at $19.">
+  <title>Pricing | Nexora Tech</title>
+  <link rel="icon" href="com.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Header -->
-  <header>
-    <h1>Nexoza Tech</h1>
-    <nav>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Nexora Tech home">
+      <img class="brand-logo" src="com.ico" alt="">
+      <span class="brand-name">Nexora Tech</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="main-navigation" aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="aboutpage.html">About</a></li>
         <li><a href="servicespage.html">Services</a></li>
-        <li><a href="pricingpage.html" style="color:#38bdf8;">Pricing</a></li>
+        <li><a href="pricingpage.html" aria-current="page">Pricing</a></li>
         <li><a href="blogpage.html">Blog</a></li>
-        <li><a href="contactus page.html">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h2>Pricing Plans</h2>
-  </section>
-
-  <!-- Pricing Section -->
-  <section>
-    <h2 style="text-align:center;">Choose Your Plan</h2>
-    <div class="pricing-container">
-      
-      <!-- Basic Plan -->
-      <div class="pricing-card">
-        <h3>Basic</h3>
-        <p class="price">$199</p>
-        <ul class="features">
-          <li>1 Website</li>
-          <li>Basic Design</li>
-          <li>Email Support</li>
-          <li>3 Revisions</li>
-        </ul>
-        <a href="contactus page.html" class="btn btn-outline">Get Started</a>
+  <main>
+    <section class="hero page-hero" aria-labelledby="page-title">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Straightforward options</p>
+        <h1 id="page-title">Choose a plan that fits your next step</h1>
+        <p>Start with the essentials, or choose a more complete package as your business grows.</p>
       </div>
+    </section>
 
-      <!-- Standard Plan (Popular) -->
-      <div class="pricing-card popular">
-        <h3>Standard</h3>
-        <p class="price">$499</p>
-        <ul class="features">
-          <li>3 Websites</li>
-          <li>Custom Design</li>
-          <li>Priority Support</li>
-          <li>Unlimited Revisions</li>
-        </ul>
-        <a href="contactus page.html" class="btn btn-primary">Get Started</a>
+    <section aria-labelledby="plans-title">
+      <p class="eyebrow">Plans &amp; pricing</p>
+      <h2 class="section-title" id="plans-title">Professional support at an approachable price</h2>
+      <p class="section-lead">Each plan is a starting point. We’ll confirm the scope and project details with you before work begins.</p>
+      <div class="price-grid">
+        <article class="price-card reveal">
+          <h3>Basic</h3>
+          <p class="price">$19 <small>starting price</small></p>
+          <p>Starter website or simple design project.</p>
+          <ul class="feature-list">
+            <li>One-page website or focused design task</li>
+            <li>Responsive, clean presentation</li>
+            <li>Basic design revisions</li>
+            <li>Email communication</li>
+          </ul>
+          <a class="btn btn-secondary" href="contact.html">Choose Basic</a>
+        </article>
+        <article class="price-card popular reveal">
+          <span class="popular-label">Most Popular</span>
+          <h3>Standard</h3>
+          <p class="price">$49 <small>starting price</small></p>
+          <p>Multi-page site, branding, and SEO setup.</p>
+          <ul class="feature-list">
+            <li>Multi-page website or extended design scope</li>
+            <li>Custom brand styling</li>
+            <li>SEO setup for key pages</li>
+            <li>Priority project communication</li>
+          </ul>
+          <a class="btn" href="contact.html">Choose Standard</a>
+        </article>
+        <article class="price-card reveal">
+          <h3>Premium</h3>
+          <p class="price">$99 <small>starting price</small></p>
+          <p>Full website, custom graphics, and blog content.</p>
+          <ul class="feature-list">
+            <li>Complete website and custom graphics</li>
+            <li>Blog and content support</li>
+            <li>Expanded refinement and revisions</li>
+            <li>Dedicated project coordination</li>
+          </ul>
+          <a class="btn btn-secondary" href="contact.html">Choose Premium</a>
+        </article>
       </div>
+      <p class="testimonial-note">Final project pricing depends on scope. We’ll agree on the deliverables and cost before starting.</p>
+    </section>
 
-      <!-- Premium Plan -->
-      <div class="pricing-card">
-        <h3>Premium</h3>
-        <p class="price">$999</p>
-        <ul class="features">
-          <li>Unlimited Websites</li>
-          <li>Advanced Design & Branding</li>
-          <li>24/7 Support</li>
-          <li>Dedicated Project Manager</li>
-        </ul>
-        <a href="contactus page.html" class="btn btn-outline">Get Started</a>
-      </div>
+    <section class="cta-banner" aria-labelledby="cta-title">
+      <div><h2 id="cta-title">Not sure which plan is right?</h2><p>Share what you’re trying to build, and we’ll help you choose a suitable starting point.</p></div>
+      <a class="btn" href="contact.html">Ask us</a>
+    </section>
+  </main>
 
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div><a class="footer-brand" href="index.html"><img class="brand-logo" src="com.ico" alt="">Nexora Tech</a><p>Friendly digital services for small businesses ready to grow online.</p></div>
+      <div><h2>Quick links</h2><ul class="footer-links"><li><a href="aboutpage.html">About</a></li><li><a href="servicespage.html">Services</a></li><li><a href="pricingpage.html">Pricing</a></li><li><a href="blogpage.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h2>Contact</h2><ul class="footer-links"><li><a href="mailto:support@nexoratech.com">support@nexoratech.com</a></li><li><a href="tel:+2348001234567">+234 800 123 4567</a></li><li>Abuja, Nigeria</li></ul></div>
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Nexoza Tech. All rights reserved.</p>
+    <p class="copyright">&copy; <span data-current-year>2026</span> Nexora Tech. All rights reserved.</p>
   </footer>
-
+  <script src="script.js" defer></script>
 </body>
 </html>
